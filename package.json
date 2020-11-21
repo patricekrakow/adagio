@@ -1,14 +1,14 @@
 {
-    "name": "service1",
-    "version": "1.0.0",
-    "description": "Service #1",
-    "author": "Patrice Krakow <patrice.krakow@gmail.com>",
-    "main": "server.js",
-    "scripts": {
-      "start": "node server.js"
-    },
-    "dependencies": {
-      "express": "^4.16.1"
-    }
+  "name": "adagio",
+  "version": "1.0.0",
+  "description": "A reference Node.js implementation of a service exposing an API.",
+  "author": "Patrice Krakow <patrice.krakow@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
   }
-  
+}
