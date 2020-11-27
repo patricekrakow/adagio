@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Adagio Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <ul id="ulItems"></ul>
+  <script>
+
+listAllItems();
+
+function listAllItems() {
+  fetch('http://127.0.0.1:3000/items')
+    .then(response => response.json())
+    .then(items => {
+      console.log(items);
+      const ulItems = document.getElementById('ulItems');
+      ulItems.innerHTML = "";
+      if (items.length > 0) {
+        items.forEach(item => {
+          console.log(item.name);
+          let liItem = document.createElement('li');
+          liItem.textContent = `${item.name} (${item.id}) - ${item.status}`;
+          ulItems.appendChild(liItem);
+        });
+      }
+    });
+}
+
+  </script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 'use strict';
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const short = require('short-uuid');
 
@@ -13,6 +14,12 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
+//
+const corsOptions = {
+  origin: 'http://127.0.0.1:5500',
+  optionsSuccessStatus: 200 // For legacy browser support
+}
+app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
   res.json({
